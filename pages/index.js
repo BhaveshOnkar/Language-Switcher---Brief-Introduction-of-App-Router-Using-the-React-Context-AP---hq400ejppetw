@@ -1,9 +1,10 @@
 "use client"
-import  from '../components/LanguageSwitcher';
-import {  } from '../contexts/LanguageContext';
-
+// import  from '../components/LanguageSwitcher';
+// import {  } from '../contexts/LanguageContext';
+import LanguageSwitcher from '../components/LanguageSwitcher'
+import { useLanguageContext } from '@/contexts/LanguageContext';
 const Home = () => {
-    
+    const languageState = useLanguageContext();
 
     const content = {
         en: {
@@ -20,10 +21,12 @@ const Home = () => {
 
     return (
         <div>
-            <h1>{}</h1>
-            <LanguageSwitcher />
+            <h1>{content[languageState.language].welcome}</h1>
+            <LanguageSwitcher /> 
         </div>
     );
 };
 
 export default Home;
+
+ 
